@@ -10,13 +10,13 @@ void sortPriorities(int priority[], int n)
         int key = priority[i];
         int j = i - 1;
 
-        while (j > 0 && priority[j] > key)
+        while (j >= 0 && priority[j] >= key)
         {
             priority[j + 1] = priority[j];
             j--;
         }
 
-        priority[j] = key;
+        priority[j+1] = key;
     }
 }
 
