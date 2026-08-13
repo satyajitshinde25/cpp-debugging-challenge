@@ -54,9 +54,9 @@ template <class T>
 T maximum(T a, T b)
 {
     if (a < b)
-        return a;
+        return b;
 
-    return b;
+    return a;
 }
 
 int main()
@@ -94,9 +94,9 @@ int main()
                     employeeAmount)
              << endl;
     }
-    catch (runtime_error e)
+    catch (const exception& e)
     {
-        cout << "Runtime error: "
+        cout << "Error: "
              << e.what() << endl;
     }
 
