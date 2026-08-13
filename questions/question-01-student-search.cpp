@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-int firstPosition(int marks[], int n, int target)
+int lastPosition(int marks[], int n, int target)
 {
     int low = 0;
     int high = n - 1;
@@ -33,7 +33,7 @@ int firstPosition(int marks[], int n, int target)
     return answer;
 }
 
-int lastPosition(int marks[], int n, int target)
+int firstPosition(int marks[], int n, int target)
 {
     int low = 0;
     int high = n - 1;
