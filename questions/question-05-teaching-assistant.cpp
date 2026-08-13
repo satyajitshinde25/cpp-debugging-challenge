@@ -23,7 +23,7 @@ public:
     }
 };
 
-class Student : public Person
+class Student : virtual public Person
 {
 protected:
     int rollNo;
@@ -37,14 +37,14 @@ public:
         cout << "Student created" << endl;
     }
 
-    void showRole()
+    void showStudentRole()
     {
         cout << "Student Roll No: "
              << rollNo << endl;
     }
 };
 
-class Employee : public Person
+class Employee : virtual public Person
 {
 protected:
     int employeeId;
@@ -58,7 +58,7 @@ public:
         cout << "Employee created" << endl;
     }
 
-    void showRole()
+    void showEmployeeRole()
     {
         cout << "Employee ID: "
              << employeeId << endl;
@@ -79,7 +79,7 @@ public:
         int r,
         int id,
         int h)
-        : Student(n, r),
+        : Person(n), Student(n, r),
           Employee(n, id)
     {
         hours = h;
@@ -90,7 +90,8 @@ public:
     void display()
     {
         showPerson();
-        showRole();
+        showStudentRole();
+        showEmployeeRole();
 
         cout << "Working hours: "
              << hours << endl;
