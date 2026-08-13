@@ -15,7 +15,7 @@ public:
     virtual double calculate(
         double amount,
         double rate) = 0;
-
+    virtual ~Service(){}
     void validate(double amount)
     {
         if (amount < 0)
@@ -105,3 +105,15 @@ int main()
 
     return 0;
 }
+
+
+//1.How does runtime polymorphism work here?
+//At the runtime, the correct calculate function is called on the basis of actual object
+//2.Why is the base class pointer used?
+//Base class pointer is used to achieve runtime polymorphism
+//3.Why should the base class have a virtual destructor?
+//To ensure that when a derived class object is deleted using a base class pointer, then the destructor is called correctly.
+//4.What is the purpose of the template function?
+//Template function can work with different datatypes, the purpose was only to work with different datatype
+//5.What type of exception should be handled if the input amount is invalid?
+//In this invalid_argument should be handled because a negative amount is  an invalid input
