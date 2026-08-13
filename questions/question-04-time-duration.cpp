@@ -22,7 +22,7 @@ public:
     Duration(int h, int m)
     {
         hours = h;
-        minutes == m;
+        minutes = m;
     }
 
     Duration operator+(Duration other)
@@ -32,7 +32,7 @@ public:
         result.hours = hours + other.hours;
         result.minutes = minutes + other.minutes;
 
-        if (result.minutes > 60)
+        if (result.minutes >= 60)
         {
             result.hours++;
             result.minutes -= 60;
@@ -47,7 +47,7 @@ public:
             return true;
 
         if (hours == other.hours &&
-            minutes < other.minutes)
+            minutes > other.minutes)
             return true;
 
         return false;
