@@ -110,3 +110,12 @@ int main()
 
     return 0;
 }
+
+//1.Why are two Person objects created?
+//Because TeachingAssistant inherits from both Student and Employee, and both classes separately inherit from Person. Therefore, two copies of Person are created.
+//2.What is the diamond inheritance problem?
+//It happens when a class inherits from 2 classes that both inherit from the same base class, this can create duplicate base-class objects and ambiguity
+//3.How can virtual inheritance solve the problem?
+//Virtual inheritance ensures that only one shared copy of Person object is created for TeachingAssistant
+//4.What changes are required in Student and Employee?
+//change :- class Student : virtual public Person and class Employee : virtual public Person
